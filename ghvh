@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوت تداول الكريبتو</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>إعدادات بوت تداول الكريبتو</h1>
+    <form id="tradingBotForm">
+        <label for="smaPeriod">فترة المتوسط المتحرك (SMA):</label>
+        <input type="number" id="smaPeriod" name="smaPeriod" min="1" required>
+
+        <label for="rsiPeriod">فترة مؤشر القوة النسبية (RSI):</label>
+        <input type="number" id="rsiPeriod" name="rsiPeriod" min="1" required>
+
+        <label for="macdFast">فترة MACD السريعة:</label>
+        <input type="number" id="macdFast" name="macdFast" min="1" required>
+
+        <label for="macdSlow">فترة MACD البطيئة:</label>
+        <input type="number" id="macdSlow" name="macdSlow" min="1" required>
+
+        <label for="macdSignal">فترة إشارة MACD:</label>
+        <input type="number" id="macdSignal" name="macdSignal" min="1" required>
+
+        <button type="submit">تحديث الإعدادات</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('tradingBotForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const smaPeriod = document.getElementById('smaPeriod').value;
+        const rsiPeriod = document.getElementById('rsiPeriod').value;
+        const macdFast = document.getElementById('macdFast').value;
+        const macdSlow = document.getElementById('macdSlow').value;
+        const macdSignal = document.getElementById('macdSignal').value;
+
+        alert(`تم تحديث الإعدادات:\nSMA: ${smaPeriod}\nRSI: ${rsiPeriod}\nMACD Fast: ${macdFast}\nMACD Slow: ${macdSlow}\nMACD Signal: ${macdSignal}`);
+    });
+</script>
+
+</body>
+</html>
